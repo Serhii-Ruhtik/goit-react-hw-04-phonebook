@@ -1,5 +1,3 @@
-// import { Component } from 'react';
-
 import { useState } from 'react';
 import css from '../Phonebook.module.css';
 
@@ -18,13 +16,6 @@ const ContactForm = ({ sumbit }) => {
     }
   };
 
-  // const onSubmit = (name, number) => {
-  //   sumbit({ name, number });
-  //   setName('');
-  //   setNumber('');
-  //   console.log('Submitted:', name, number);
-  // };
-
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -33,18 +24,6 @@ const ContactForm = ({ sumbit }) => {
       return;
     }
     sumbit({ name, number });
-    setName('');
-    setNumber('');
-    // // Викликаємо onSubmit з вашими значеннями
-    // onSubmit({ name, number });
-    // setName('');
-    // setNumber('');
-
-    // // Очищаємо значення полів форми
-    reset();
-  };
-
-  const reset = () => {
     setName('');
     setNumber('');
   };

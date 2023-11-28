@@ -22,7 +22,6 @@ const App = () => {
   useEffect(() => {
     if (contacts !== 0) {
       localStorage.setItem(LS_KEY, JSON.stringify(contacts));
-      console.log('update');
     }
   }, [contacts]);
 
