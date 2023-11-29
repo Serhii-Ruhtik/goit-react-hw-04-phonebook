@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from '../Phonebook.module.css';
 
-const ContactForm = ({ sumbit }) => {
+const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -23,7 +23,7 @@ const ContactForm = ({ sumbit }) => {
       alert('Please enter a name.');
       return;
     }
-    sumbit({ name, number });
+    onSubmit({ name, number });
     setName('');
     setNumber('');
   };

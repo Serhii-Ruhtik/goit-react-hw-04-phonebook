@@ -20,7 +20,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (contacts !== 0) {
+    if (contacts.length !== 0) {
       localStorage.setItem(LS_KEY, JSON.stringify(contacts));
     }
   }, [contacts]);
@@ -33,7 +33,6 @@ const App = () => {
     const nameExists = contacts.find(contact => contact.name === name);
     if (nameExists) {
       alert(`${name} is already in contacts`);
-      this.setState({ name: '', number: '' });
       return;
     }
     const newContact = {
@@ -68,7 +67,7 @@ const App = () => {
       <h2 className={css.title}>Contact List</h2>
       <Filter value={filter} onChange={handleFilterChange} />
       <ContactList
-        contacts={filterSuchContact || contacts}
+        contacts={contacts && filterSuchContact()}
         onDeleteContact={handleDeleteContact}
       />
     </div>
